@@ -11,6 +11,14 @@
 		0985B7051E3291F100AE5E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0985B7011E3291F100AE5E6C /* LaunchScreen.storyboard */; };
 		0985B7061E3291F100AE5E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0985B7031E3291F100AE5E6C /* Main.storyboard */; };
 		0985B7121E3294A800AE5E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7111E3294A800AE5E6C /* AppDelegate.swift */; };
+		0985B7181E32986300AE5E6C /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7171E32986300AE5E6C /* PostListView.swift */; };
+		0985B71A1E3298ED00AE5E6C /* PostListEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7191E3298ED00AE5E6C /* PostListEventHandler.swift */; };
+		0985B71C1E329A4400AE5E6C /* PostListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B71B1E329A4400AE5E6C /* PostListInteractorInput.swift */; };
+		0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B71D1E329A5B00AE5E6C /* PostListInteractorOutput.swift */; };
+		0985B7201E329C3700AE5E6C /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B71F1E329C3700AE5E6C /* PostListViewController.swift */; };
+		0985B7221E329C8000AE5E6C /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7211E329C8000AE5E6C /* PostListPresenter.swift */; };
+		0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7231E329CD700AE5E6C /* BHRouter.swift */; };
+		0985B7261E32A0D800AE5E6C /* BHRouterImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7251E32A0D800AE5E6C /* BHRouterImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		0985B7021E3291F100AE5E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0985B7041E3291F100AE5E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0985B7111E3294A800AE5E6C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0985B7171E32986300AE5E6C /* PostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		0985B7191E3298ED00AE5E6C /* PostListEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListEventHandler.swift; sourceTree = "<group>"; };
+		0985B71B1E329A4400AE5E6C /* PostListInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListInteractorInput.swift; sourceTree = "<group>"; };
+		0985B71D1E329A5B00AE5E6C /* PostListInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListInteractorOutput.swift; sourceTree = "<group>"; };
+		0985B71F1E329C3700AE5E6C /* PostListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		0985B7211E329C8000AE5E6C /* PostListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
+		0985B7231E329CD700AE5E6C /* BHRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHRouter.swift; sourceTree = "<group>"; };
+		0985B7251E32A0D800AE5E6C /* BHRouterImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHRouterImplementation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,7 @@
 		0985B7091E32933A00AE5E6C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0985B7131E3297A000AE5E6C /* Posts List */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -109,6 +126,8 @@
 		0985B70A1E32935300AE5E6C /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				0985B7231E329CD700AE5E6C /* BHRouter.swift */,
+				0985B7251E32A0D800AE5E6C /* BHRouterImplementation.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -140,6 +159,43 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0985B7131E3297A000AE5E6C /* Posts List */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7141E3297ED00AE5E6C /* View */,
+				0985B7151E3297F500AE5E6C /* Presenter */,
+				0985B7161E32980200AE5E6C /* Interactor */,
+			);
+			path = "Posts List";
+			sourceTree = "<group>";
+		};
+		0985B7141E3297ED00AE5E6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7171E32986300AE5E6C /* PostListView.swift */,
+				0985B71F1E329C3700AE5E6C /* PostListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0985B7151E3297F500AE5E6C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7191E3298ED00AE5E6C /* PostListEventHandler.swift */,
+				0985B7211E329C8000AE5E6C /* PostListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0985B7161E32980200AE5E6C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0985B71B1E329A4400AE5E6C /* PostListInteractorInput.swift */,
+				0985B71D1E329A5B00AE5E6C /* PostListInteractorOutput.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0985B7221E329C8000AE5E6C /* PostListPresenter.swift in Sources */,
+				0985B7181E32986300AE5E6C /* PostListView.swift in Sources */,
+				0985B71C1E329A4400AE5E6C /* PostListInteractorInput.swift in Sources */,
+				0985B71A1E3298ED00AE5E6C /* PostListEventHandler.swift in Sources */,
+				0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */,
+				0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */,
+				0985B7261E32A0D800AE5E6C /* BHRouterImplementation.swift in Sources */,
+				0985B7201E329C3700AE5E6C /* PostListViewController.swift in Sources */,
 				0985B7121E3294A800AE5E6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
