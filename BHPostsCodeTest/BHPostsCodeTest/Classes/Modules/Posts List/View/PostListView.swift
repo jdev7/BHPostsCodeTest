@@ -14,8 +14,7 @@ protocol PostListView: class {
     func showLoading()
     func stopLoading()
     
-    func showNoPostsView()
-    func showPostsView()
+    func refreshPostsView()
 }
 
 

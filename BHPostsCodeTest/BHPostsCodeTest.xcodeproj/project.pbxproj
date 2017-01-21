@@ -23,6 +23,10 @@
 		0985B72B1E336B0C00AE5E6C /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B72A1E336B0C00AE5E6C /* ViewControllerFactory.swift */; };
 		0985B72E1E33953A00AE5E6C /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B72D1E33953A00AE5E6C /* PostViewModel.swift */; };
 		0985B7301E33969100AE5E6C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B72F1E33969100AE5E6C /* UIViewControllerExtension.swift */; };
+		0985B7321E33DC7000AE5E6C /* PostListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7311E33DC7000AE5E6C /* PostListTVCell.swift */; };
+		0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7341E33E8FC00AE5E6C /* MainViewController.swift */; };
+		0985B7371E33F2D000AE5E6C /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7361E33F2D000AE5E6C /* UIFontExtension.swift */; };
+		0985B7391E33F36600AE5E6C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7381E33F36600AE5E6C /* UIColorExtension.swift */; };
 		9B4B087C70C1227FC8221367 /* Pods_BHPostsCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		0985B72A1E336B0C00AE5E6C /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		0985B72D1E33953A00AE5E6C /* PostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		0985B72F1E33969100AE5E6C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		0985B7311E33DC7000AE5E6C /* PostListTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTVCell.swift; sourceTree = "<group>"; };
+		0985B7341E33E8FC00AE5E6C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0985B7361E33F2D000AE5E6C /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		0985B7381E33F36600AE5E6C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		11A25801854BB4351B8AE276 /* Pods-BHPostsCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHPostsCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E777DD3C7F6EEFA09114C5 /* Pods-BHPostsCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 		0985B7091E32933A00AE5E6C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0985B7331E33E71C00AE5E6C /* Main */,
 				0985B7131E3297A000AE5E6C /* Posts List */,
 			);
 			path = Modules;
@@ -175,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				0985B72A1E336B0C00AE5E6C /* ViewControllerFactory.swift */,
+				0985B7311E33DC7000AE5E6C /* PostListTVCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				0985B72F1E33969100AE5E6C /* UIViewControllerExtension.swift */,
+				0985B7361E33F2D000AE5E6C /* UIFontExtension.swift */,
+				0985B7381E33F36600AE5E6C /* UIColorExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,6 +251,14 @@
 				0985B72D1E33953A00AE5E6C /* PostViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0985B7331E33E71C00AE5E6C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7341E33E8FC00AE5E6C /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		6C3AEDB22719F84E7569D32F /* Pods */ = {
@@ -374,8 +394,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0985B7391E33F36600AE5E6C /* UIColorExtension.swift in Sources */,
 				0985B72E1E33953A00AE5E6C /* PostViewModel.swift in Sources */,
 				0985B7221E329C8000AE5E6C /* PostListPresenter.swift in Sources */,
+				0985B7371E33F2D000AE5E6C /* UIFontExtension.swift in Sources */,
 				0985B7181E32986300AE5E6C /* PostListView.swift in Sources */,
 				0985B7291E33642300AE5E6C /* DependencyInjection.swift in Sources */,
 				0985B71C1E329A4400AE5E6C /* PostListInteractorInput.swift in Sources */,
@@ -383,10 +405,12 @@
 				0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */,
 				0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */,
 				0985B7261E32A0D800AE5E6C /* BHRouterImplementation.swift in Sources */,
+				0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */,
 				0985B7301E33969100AE5E6C /* UIViewControllerExtension.swift in Sources */,
 				0985B72B1E336B0C00AE5E6C /* ViewControllerFactory.swift in Sources */,
 				0985B7201E329C3700AE5E6C /* PostListViewController.swift in Sources */,
 				0985B7121E3294A800AE5E6C /* AppDelegate.swift in Sources */,
+				0985B7321E33DC7000AE5E6C /* PostListTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +576,7 @@
 				0985B6FC1E32903200AE5E6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

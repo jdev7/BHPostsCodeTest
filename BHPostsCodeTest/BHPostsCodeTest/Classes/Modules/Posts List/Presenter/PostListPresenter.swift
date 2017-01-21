@@ -16,19 +16,20 @@ class PostListPresenter {
     
     fileprivate var posts: [PostViewModel]!
     
-    
 }
 
 extension PostListPresenter: PostListEventHandler {
+    
+    var numberOfPosts: Int {
+        return posts?.count ?? 0
+    }
+        
     func updateView() {
         print("presenter updateViewCalled")
         view.showLoading()
         interactor.loadPosts()
     }
     
-    func numberOfPosts() -> Int {
-        return posts?.count ?? 0
-    }
     
     func post(at index: Int) -> PostViewModel {
         return posts[index]
@@ -44,7 +45,7 @@ extension PostListPresenter: PostListInteractorOutput {
     
     func setPosts(posts: [PostViewModel]) {
         self.posts = posts
-        view.showPostsView()
+        view.refreshPostsView()
         view.stopLoading()
     }
 }

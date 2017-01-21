@@ -9,15 +9,32 @@
 import UIKit
 
 //View
-class ViewInjector {
-    private let presenterInjector: PresenterInjector = PresenterInjector()
+class MainInjector {
+    fileprivate let interactorInjector: InteractorInjector = InteractorInjector()
+    fileprivate lazy var factory: ViewControllerFactory = ViewControllerFactoryStoryboardImplementation(injector: self)
+    fileprivate lazy var presenterInjector: PresenterInjector = { return PresenterInjector(router: self.router) }()
     
+    lazy var router: BHRouter = { return BHRouterImplementation(factory: self.factory) }()
+    
+}
+
+extension MainInjector {
+    private func injectProperties(view: MainViewController) {
+        view.router = self.router
+    }
+
     private func injectProperties(view: PostListView) {
         view.presenter = presenterInjector.postListEventHandler
     }
     
     func inject(view: UIViewController) {
-        if let view = view as? PostListView {
+        if let view = view as? UINavigationController, let topVC = view.topViewController {
+            inject(view: topVC)
+        }
+        else if let view = view as? MainViewController {
+            injectProperties(view: view)
+        }
+        else if let view = view as? PostListView {
             injectProperties(view: view)
         }
     }
@@ -26,13 +43,17 @@ class ViewInjector {
 //Presenter
 class PresenterInjector {
     private let interactorInjector: InteractorInjector = InteractorInjector()
-    private let routerInjector: RouterInjector = RouterInjector()
+    private let router: BHRouter
+    
+    init(router: BHRouter) {
+        self.router = router
+    }
     
     var postListEventHandler: PostListEventHandler {
         let presenter = PostListPresenter()
         
         presenter.interactor = interactorInjector.postListInteractor
-        presenter.router = routerInjector.router
+        presenter.router = router
         
         return presenter
     }
@@ -42,13 +63,6 @@ class PresenterInjector {
 //Interactor
 class InteractorInjector {
     var postListInteractor: PostListInteractorInput { return PostListInteractor() }
-}
-
-
-//Router
-
-class RouterInjector {
-    var router: BHRouter { return BHRouterImplementation(factory: ViewControllerFactoryStoryboardImplementation()) }
 }
 
 

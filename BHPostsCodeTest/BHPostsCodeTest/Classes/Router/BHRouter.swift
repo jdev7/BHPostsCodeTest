@@ -10,4 +10,5 @@ import UIKit
 
 protocol BHRouter {
     func navigateToMainWindow(window: UIWindow)
+    func navigateToPostsList()
 }

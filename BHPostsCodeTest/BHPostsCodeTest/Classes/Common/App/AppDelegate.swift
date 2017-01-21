@@ -12,14 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var injector: MainInjector = MainInjector()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let router = RouterInjector().router
-        router.navigateToMainWindow(window: window!)
         window?.makeKeyAndVisible()
+        injector.router.navigateToMainWindow(window: window!)
         
         return true
     }

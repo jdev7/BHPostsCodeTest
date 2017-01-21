@@ -15,16 +15,15 @@ class BHRouterImplementation: BHRouter {
     
     init(factory: ViewControllerFactory) {
         self.factory = factory
-        print("router initialized")
     }
-    
-    deinit {
-        print("router DEINIT")
-    }
-
     
     func navigateToMainWindow(window: UIWindow) {
-        rootViewController = factory.instantiateViewController(of: .postList)
+        rootViewController = factory.instantiateViewController(of: .main)
         window.rootViewController = rootViewController
+    }
+    
+    func navigateToPostsList() {
+        let vc = factory.instantiateViewController(of: .postList)
+        self.rootViewController?.show(vc, sender: self)
     }
 }
