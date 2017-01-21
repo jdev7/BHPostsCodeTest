@@ -10,6 +10,12 @@ import UIKit
 
 protocol PostListView: class {
     var presenter: PostListEventHandler! { get set }
+    
+    func showLoading()
+    func stopLoading()
+    
+    func showNoPostsView()
+    func showPostsView()
 }
 
 

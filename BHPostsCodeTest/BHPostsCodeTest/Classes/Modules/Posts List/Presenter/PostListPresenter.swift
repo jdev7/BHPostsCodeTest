@@ -8,22 +8,43 @@
 
 import Foundation
 
-class PostListPresenter: PostListEventHandler {
+class PostListPresenter {
     
     weak var view: PostListView!
     var interactor: PostListInteractorInput! { didSet { self.interactor.output = self } }
     var router: BHRouter!
     
+    fileprivate var posts: [PostViewModel]!
+    
+    
+}
+
+extension PostListPresenter: PostListEventHandler {
     func updateView() {
         print("presenter updateViewCalled")
+        view.showLoading()
         interactor.loadPosts()
+    }
+    
+    func numberOfPosts() -> Int {
+        return posts?.count ?? 0
+    }
+    
+    func post(at index: Int) -> PostViewModel {
+        return posts[index]
+    }
+    
+    func didSelectPost(at index: Int) {
+        print("post: \(posts[index].identifier) selected")
     }
 }
 
 
 extension PostListPresenter: PostListInteractorOutput {
     
-    func setPosts() {
-        print("presenter posts are set")
+    func setPosts(posts: [PostViewModel]) {
+        self.posts = posts
+        view.showPostsView()
+        view.stopLoading()
     }
 }

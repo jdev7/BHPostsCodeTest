@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostListViewController: UIViewController, PostListView {
+class PostListViewController: UIViewController {
     
     var presenter: PostListEventHandler! { didSet { self.presenter.view = self } }
     
@@ -17,4 +17,15 @@ class PostListViewController: UIViewController, PostListView {
         presenter.updateView()
     }
     
+}
+
+extension PostListViewController: PostListView {
+    
+    func showNoPostsView() {
+        
+    }
+    
+    func showPostsView() {
+        
+    }
 }
