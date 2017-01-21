@@ -8,12 +8,22 @@
 
 import Foundation
 
-class PostListPresenter: PostListEventHandler, PostListInteractorOutput {
+class PostListPresenter: PostListEventHandler {
     
     weak var view: PostListView!
-    var interactor: PostListInteractorInput!
+    var interactor: PostListInteractorInput! { didSet { self.interactor.output = self } }
+    var router: BHRouter!
     
     func updateView() {
-        
+        print("presenter updateViewCalled")
+        interactor.loadPosts()
+    }
+}
+
+
+extension PostListPresenter: PostListInteractorOutput {
+    
+    func setPosts() {
+        print("presenter posts are set")
     }
 }

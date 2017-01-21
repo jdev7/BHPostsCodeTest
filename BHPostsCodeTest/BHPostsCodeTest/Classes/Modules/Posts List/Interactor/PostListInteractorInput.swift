@@ -10,4 +10,15 @@ import UIKit
 
 protocol PostListInteractorInput {
     weak var output: PostListInteractorOutput? { get set }
+    func loadPosts()
+}
+
+
+class PostListInteractor: PostListInteractorInput {
+    weak var output: PostListInteractorOutput?
+    
+    func loadPosts() {
+        print("Interactor loading posts")
+        self.output?.setPosts()
+    }
 }

@@ -10,11 +10,11 @@ import UIKit
 
 class PostListViewController: UIViewController, PostListView {
     
-    var presenter: PostListEventHandler!
+    var presenter: PostListEventHandler! { didSet { self.presenter.view = self } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter.updateView()
     }
     
 }

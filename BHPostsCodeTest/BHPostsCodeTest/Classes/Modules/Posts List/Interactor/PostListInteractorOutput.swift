@@ -10,4 +10,6 @@ import Foundation
 
 protocol PostListInteractorOutput: class {
     var interactor: PostListInteractorInput! { get set }
+    
+    func setPosts()
 }

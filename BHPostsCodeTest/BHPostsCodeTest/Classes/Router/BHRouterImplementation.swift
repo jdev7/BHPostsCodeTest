@@ -8,8 +8,23 @@
 
 import UIKit
 
-struct BHRouterImplementation: BHRouter {
+class BHRouterImplementation: BHRouter {
+    
+    let factory: ViewControllerFactory
+    private var rootViewController: UIViewController?
+    
+    init(factory: ViewControllerFactory) {
+        self.factory = factory
+        print("router initialized")
+    }
+    
+    deinit {
+        print("router DEINIT")
+    }
+
+    
     func navigateToMainWindow(window: UIWindow) {
-        
+        rootViewController = factory.instantiateViewController(of: .postList)
+        window.rootViewController = rootViewController
     }
 }
