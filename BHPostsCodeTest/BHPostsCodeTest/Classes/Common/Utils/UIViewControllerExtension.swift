@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import PKHUD
 
 extension UIViewController {
     func showLoading() {
-        
+        HUD.show(.progress)
     }
     
     func stopLoading()  {
-        
+        HUD.hide()
     }
 }
