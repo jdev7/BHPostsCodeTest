@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Gloss (1.2.0)
+  - PKHUD (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3)
+  - Gloss (~> 1.2)
+  - PKHUD (~> 4.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Gloss: ec49584b2e8144e39810b6db6285433316e0c1c7
+  PKHUD: a0ecdee9f67d9b462c0c5e4ba38400292ea6ae6e
+
+PODFILE CHECKSUM: ba7f9c991d3651f46d1530e2d51840556d8fd76f
+
+COCOAPODS: 1.1.1
