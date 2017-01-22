@@ -25,19 +25,21 @@ class PostListInteractor: PostListInteractorInput {
     func loadPosts() {
         if posts == nil {
             loadPostsFromDisk()
-            
+        }
+        else {
+            loadUsers()
         }
     }
     
     private func loadPostsFromDisk() {
-        // if no results, loadFromNetwork
+        // TODO: load posts from disk and if no results, loadFromNetwork
         loadPostsFromNetwork()
     }
     
     private func loadPostsFromNetwork() {
         networkDataStore.getPosts(success: { (posts) in
             self.posts = posts
-            // save Posts from network to Disk
+            // TODO: save Posts from network to Disk
             self.loadUsers()
             
         }) { (error) in
@@ -49,18 +51,21 @@ class PostListInteractor: PostListInteractorInput {
         if users == nil {
             loadUsersFromDisk()
         }
+        else {
+            loadComments()
+        }
     }
     
     private func loadUsersFromDisk() {
-        // if no results, loadFromNetwork
+        // TODO: load users from disk and if no results, loadFromNetwork
         loadUsersFromNetwork()
     }
     
     private func loadUsersFromNetwork() {
         networkDataStore.getUsers(success: { (users) in
             self.users = users
-            // save Users from network to Disk
-            self.preparePosts()
+            // TODO: save Users from network to Disk
+            self.loadComments()
             
         }) { (error) in
             self.output?.errorLoadingPosts(description: error.localizedDescription)
@@ -71,17 +76,20 @@ class PostListInteractor: PostListInteractorInput {
         if comments == nil {
             loadCommentsFromDisk()
         }
+        else {
+            preparePosts()
+        }
     }
     
     private func loadCommentsFromDisk() {
-        // if no results, loadFromNetwork
+        // TODO: load comments from disk and if no results, loadFromNetwork
         loadCommentsFromNetwork()
     }
     
     private func loadCommentsFromNetwork() {
         networkDataStore.getComments(success: { (comments) in
             self.comments = comments
-            // save comments from network to Disk
+            // TODO: save comments from network to Disk
             self.preparePosts()
             
         }) { (error) in
@@ -90,11 +98,19 @@ class PostListInteractor: PostListInteractorInput {
     }
     
     private func preparePosts() {
-        let preparedPosts = posts.map { (post) -> PostViewModel in
-            let userName = users.filter({ $0.id == post.userId }).first?.name
+        
+        DispatchQueue.global(qos: .background).async {
+            let preparedPosts = self.posts.map { (post) -> PostViewModel in
+                
+                let userName = self.users.filter({ $0.id == post.userId }).first?.name
+                let totalComments = self.comments.filter({ $0.postId == post.id }).count
+                
+                return PostViewModel(identifier: post.id, title: post.title, body: post.body, authorId: post.userId, authorName: userName, totalComments: totalComments)
+            }
             
-            return PostViewModel(identifier: post.id, title: post.title, authorId: post.userId, authorName: userName)
+            DispatchQueue.main.async {
+                self.output?.setPosts(posts: preparedPosts)
+            }
         }
-        self.output?.setPosts(posts: preparedPosts)
     }
 }

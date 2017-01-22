@@ -36,10 +36,9 @@ extension PostListPresenter: PostListEventHandler {
     }
     
     func didSelectPost(at index: Int) {
-        print("post: \(posts[index].identifier) selected")
+        print("post: \(posts[index].identifier) selected - total comments: \(posts[index].totalComments)")
     }
 }
-
 
 extension PostListPresenter: PostListInteractorOutput {
     
