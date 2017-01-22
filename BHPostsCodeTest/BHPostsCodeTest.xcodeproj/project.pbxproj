@@ -34,8 +34,6 @@
 		0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */; };
 		0985B74A1E352F3300AE5E6C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7491E352F3300AE5E6C /* PostDetailView.swift */; };
 		0985B74C1E352F5900AE5E6C /* PostDetailEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74B1E352F5900AE5E6C /* PostDetailEventHandler.swift */; };
-		0985B74E1E352F6E00AE5E6C /* PostDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */; };
-		0985B7501E352F7700AE5E6C /* PostDetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */; };
 		0985B7521E352F8800AE5E6C /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7511E352F8800AE5E6C /* PostDetailViewController.swift */; };
 		0985B7541E352F9A00AE5E6C /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7531E352F9A00AE5E6C /* PostDetailPresenter.swift */; };
 		0985B7561E35318100AE5E6C /* CommonViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7551E35318100AE5E6C /* CommonViewMethods.swift */; };
@@ -72,8 +70,6 @@
 		0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadDataStoreRESTImplementation.swift; sourceTree = "<group>"; };
 		0985B7491E352F3300AE5E6C /* PostDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		0985B74B1E352F5900AE5E6C /* PostDetailEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailEventHandler.swift; sourceTree = "<group>"; };
-		0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailInteractorInput.swift; sourceTree = "<group>"; };
-		0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailInteractorOutput.swift; sourceTree = "<group>"; };
 		0985B7511E352F8800AE5E6C /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		0985B7531E352F9A00AE5E6C /* PostDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
 		0985B7551E35318100AE5E6C /* CommonViewMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewMethods.swift; sourceTree = "<group>"; };
@@ -305,18 +301,8 @@
 			children = (
 				0985B7481E352EFA00AE5E6C /* View */,
 				0985B7471E352EFA00AE5E6C /* Presenter */,
-				0985B7461E352EFA00AE5E6C /* Interactor */,
 			);
 			path = "Post Detail";
-			sourceTree = "<group>";
-		};
-		0985B7461E352EFA00AE5E6C /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */,
-				0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		0985B7471E352EFA00AE5E6C /* Presenter */ = {
@@ -482,7 +468,6 @@
 				0985B71A1E3298ED00AE5E6C /* PostListEventHandler.swift in Sources */,
 				0985B74A1E352F3300AE5E6C /* PostDetailView.swift in Sources */,
 				0985B7421E34AD9D00AE5E6C /* Comment.swift in Sources */,
-				0985B7501E352F7700AE5E6C /* PostDetailInteractorOutput.swift in Sources */,
 				0985B7521E352F8800AE5E6C /* PostDetailViewController.swift in Sources */,
 				0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */,
 				0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */,
@@ -490,7 +475,6 @@
 				0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */,
 				0985B74C1E352F5900AE5E6C /* PostDetailEventHandler.swift in Sources */,
 				0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */,
-				0985B74E1E352F6E00AE5E6C /* PostDetailInteractorInput.swift in Sources */,
 				0985B7541E352F9A00AE5E6C /* PostDetailPresenter.swift in Sources */,
 				0985B7301E33969100AE5E6C /* UIViewControllerExtension.swift in Sources */,
 				0985B72B1E336B0C00AE5E6C /* ViewControllerFactory.swift in Sources */,

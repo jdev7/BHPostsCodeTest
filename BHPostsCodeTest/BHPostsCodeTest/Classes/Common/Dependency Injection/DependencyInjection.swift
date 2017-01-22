@@ -27,6 +27,10 @@ extension MainInjector {
         view.presenter = presenterInjector.postListEventHandler
     }
     
+    private func injectProperties(view: PostDetailView) {
+        view.presenter = presenterInjector.postDetailEventHandler
+    }
+    
     func inject(view: UIViewController) {
         if let view = view as? UINavigationController, let topVC = view.topViewController {
             inject(view: topVC)
@@ -35,6 +39,9 @@ extension MainInjector {
             injectProperties(view: view)
         }
         else if let view = view as? PostListView {
+            injectProperties(view: view)
+        }
+        else if let view = view as? PostDetailView {
             injectProperties(view: view)
         }
     }
@@ -57,20 +64,27 @@ class PresenterInjector {
         
         return presenter
     }
+    
+    var postDetailEventHandler: PostDetailEventHandler {
+        return PostDetailPresenter()
+    }
 }
 
 
 //Interactor
 class InteractorInjector {
+    private let dataStoreInjector: DataStoreInjector = DataStoreInjector()
     var postListInteractor: PostListInteractorInput {
         let interactor = PostListInteractor()
-        interactor.networkDataStore = ReadDataStoreRESTImplementation()
+        interactor.networkDataStore = dataStoreInjector.networkDatastore
         return interactor
     }
 }
 
-
 //Services
+class DataStoreInjector {
+    var networkDatastore: ReadDataStore = ReadDataStoreRESTImplementation()
+}
 
 
 //Data

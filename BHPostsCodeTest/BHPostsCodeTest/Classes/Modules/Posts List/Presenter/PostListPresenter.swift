@@ -30,13 +30,12 @@ extension PostListPresenter: PostListEventHandler {
         interactor.loadPosts()
     }
     
-    
     func post(at index: Int) -> PostViewModel {
         return posts[index]
     }
     
     func didSelectPost(at index: Int) {
-        print("post: \(posts[index].identifier) selected - total comments: \(posts[index].totalComments)")
+        router.navigateToPostsDetail(post: posts[index])
     }
 }
 

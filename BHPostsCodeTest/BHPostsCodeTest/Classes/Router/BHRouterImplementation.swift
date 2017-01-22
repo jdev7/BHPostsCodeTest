@@ -26,4 +26,12 @@ class BHRouterImplementation: BHRouter {
         let vc = factory.instantiateViewController(of: .postList)
         self.rootViewController?.show(vc, sender: self)
     }
+    
+    func navigateToPostsDetail(post: PostViewModel) {
+        let vc = factory.instantiateViewController(of: .postDetail)
+        let view = vc as! PostDetailView
+        var eventHandler = view.presenter
+        eventHandler?.post = post
+        self.rootViewController?.show(vc, sender: self)
+    }
 }

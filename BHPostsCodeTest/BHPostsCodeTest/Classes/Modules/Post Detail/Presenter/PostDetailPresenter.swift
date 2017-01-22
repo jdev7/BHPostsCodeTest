@@ -16,11 +16,7 @@ class PostDetailPresenter {
 extension PostDetailPresenter: PostDetailEventHandler {
     
     func updateView() {
-        
+        view.showPostInfo(post: post)
     }
-    
-}
-
-extension PostDetailPresenter: PostDetailInteractorOutput {
     
 }
