@@ -24,10 +24,14 @@ class PostListInteractor: PostListInteractorInput {
     
     func loadPosts() {
         if posts == nil {
-            //loadPostsFromDisk
-            // if no results, loadFromNetwork
-            loadPostsFromNetwork()
+            loadPostsFromDisk()
+            
         }
+    }
+    
+    private func loadPostsFromDisk() {
+        // if no results, loadFromNetwork
+        loadPostsFromNetwork()
     }
     
     private func loadPostsFromNetwork() {
@@ -43,16 +47,41 @@ class PostListInteractor: PostListInteractorInput {
     
     private func loadUsers() {
         if users == nil {
-            //loadUsersFromDisk
-            // if no results, loadFromNetwork
-            loadUsersFromNetwork()
+            loadUsersFromDisk()
         }
+    }
+    
+    private func loadUsersFromDisk() {
+        // if no results, loadFromNetwork
+        loadUsersFromNetwork()
     }
     
     private func loadUsersFromNetwork() {
         networkDataStore.getUsers(success: { (users) in
             self.users = users
-            // save Posts from network to Disk
+            // save Users from network to Disk
+            self.preparePosts()
+            
+        }) { (error) in
+            self.output?.errorLoadingPosts(description: error.localizedDescription)
+        }
+    }
+    
+    private func loadComments() {
+        if comments == nil {
+            loadCommentsFromDisk()
+        }
+    }
+    
+    private func loadCommentsFromDisk() {
+        // if no results, loadFromNetwork
+        loadCommentsFromNetwork()
+    }
+    
+    private func loadCommentsFromNetwork() {
+        networkDataStore.getComments(success: { (comments) in
+            self.comments = comments
+            // save comments from network to Disk
             self.preparePosts()
             
         }) { (error) in
