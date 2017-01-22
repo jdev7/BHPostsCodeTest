@@ -15,6 +15,7 @@ protocol PostListView: class {
     func stopLoading()
     
     func refreshPostsView()
+    func showError(withMessage: String)
 }
 
 

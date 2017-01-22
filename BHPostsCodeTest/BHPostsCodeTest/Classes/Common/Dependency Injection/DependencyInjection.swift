@@ -62,7 +62,11 @@ class PresenterInjector {
 
 //Interactor
 class InteractorInjector {
-    var postListInteractor: PostListInteractorInput { return PostListInteractor() }
+    var postListInteractor: PostListInteractorInput {
+        let interactor = PostListInteractor()
+        interactor.networkDataStore = ReadDataStoreRESTImplementation()
+        return interactor
+    }
 }
 
 

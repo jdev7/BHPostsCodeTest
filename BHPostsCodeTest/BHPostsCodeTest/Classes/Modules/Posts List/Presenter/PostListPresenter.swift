@@ -48,4 +48,8 @@ extension PostListPresenter: PostListInteractorOutput {
         view.refreshPostsView()
         view.stopLoading()
     }
+    
+    func errorLoadingPosts(description: String) {
+        view.showError(withMessage: description)
+    }
 }

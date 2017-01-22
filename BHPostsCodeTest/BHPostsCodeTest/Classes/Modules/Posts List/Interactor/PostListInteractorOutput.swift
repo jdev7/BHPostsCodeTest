@@ -12,4 +12,5 @@ protocol PostListInteractorOutput: class {
     var interactor: PostListInteractorInput! { get set }
     
     func setPosts(posts: [PostViewModel])
+    func errorLoadingPosts(description: String)
 }

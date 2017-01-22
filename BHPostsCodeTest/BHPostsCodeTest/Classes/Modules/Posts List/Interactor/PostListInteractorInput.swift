@@ -16,17 +16,56 @@ protocol PostListInteractorInput {
 
 class PostListInteractor: PostListInteractorInput {
     weak var output: PostListInteractorOutput?
+    var networkDataStore: ReadDataStore!
+    
+    private var posts: [Post]!
+    private var users: [User]!
+    private var comments: [Comment]!
     
     func loadPosts() {
-        print("Interactor loading posts")
-        let posts = [
-            PostViewModel(identifier: 0, title: "My post 0", authorId: 0, authorName: "Juan"),
-            PostViewModel(identifier: 1, title: "My post 1", authorId: 0, authorName: "Juan"),
-            PostViewModel(identifier: 2, title: "My post 2", authorId: 1, authorName: "Pepe"),
-            PostViewModel(identifier: 3, title: "My post 3", authorId: 2, authorName: "Javier")
-        ]
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            self.output?.setPosts(posts: posts)
+        if posts == nil {
+            //loadPostsFromDisk
+            // if no results, loadFromNetwork
+            loadPostsFromNetwork()
         }
+    }
+    
+    private func loadPostsFromNetwork() {
+        networkDataStore.getPosts(success: { (posts) in
+            self.posts = posts
+            // save Posts from network to Disk
+            self.loadUsers()
+            
+        }) { (error) in
+            self.output?.errorLoadingPosts(description: error.localizedDescription)
+        }
+    }
+    
+    private func loadUsers() {
+        if users == nil {
+            //loadUsersFromDisk
+            // if no results, loadFromNetwork
+            loadUsersFromNetwork()
+        }
+    }
+    
+    private func loadUsersFromNetwork() {
+        networkDataStore.getUsers(success: { (users) in
+            self.users = users
+            // save Posts from network to Disk
+            self.preparePosts()
+            
+        }) { (error) in
+            self.output?.errorLoadingPosts(description: error.localizedDescription)
+        }
+    }
+    
+    private func preparePosts() {
+        let preparedPosts = posts.map { (post) -> PostViewModel in
+            let userName = users.filter({ $0.id == post.userId }).first?.name
+            
+            return PostViewModel(identifier: post.id, title: post.title, authorId: post.userId, authorName: userName)
+        }
+        self.output?.setPosts(posts: preparedPosts)
     }
 }

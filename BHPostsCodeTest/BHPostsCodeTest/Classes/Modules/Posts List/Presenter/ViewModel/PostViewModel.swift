@@ -14,4 +14,11 @@ struct PostViewModel {
     
     var authorId: Int
     var authorName: String
+    
+    init(identifier: Int, title: String, authorId: Int, authorName: String?) {
+        self.identifier = identifier
+        self.title = title
+        self.authorId = authorId
+        self.authorName = authorName ?? "Anonymous user"
+    }
 }

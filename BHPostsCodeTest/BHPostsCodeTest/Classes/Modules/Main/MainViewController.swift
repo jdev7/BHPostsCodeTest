@@ -12,6 +12,8 @@ class MainViewController: UIViewController {
     
     var router: BHRouter!
 
+    @IBOutlet private weak var btnOpen: UIButton!
+    
     @IBAction func openPosts(_ sender: Any) {
         router.navigateToPostsList()
     }
@@ -19,6 +21,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = " "
+        btnOpen.layer.cornerRadius = 20
+        btnOpen.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

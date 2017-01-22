@@ -27,6 +27,11 @@
 		0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7341E33E8FC00AE5E6C /* MainViewController.swift */; };
 		0985B7371E33F2D000AE5E6C /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7361E33F2D000AE5E6C /* UIFontExtension.swift */; };
 		0985B7391E33F36600AE5E6C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7381E33F36600AE5E6C /* UIColorExtension.swift */; };
+		0985B73B1E34AB3200AE5E6C /* ReadDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B73A1E34AB3200AE5E6C /* ReadDataStore.swift */; };
+		0985B73E1E34AC5800AE5E6C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B73D1E34AC5800AE5E6C /* Post.swift */; };
+		0985B7401E34AC8600AE5E6C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B73F1E34AC8600AE5E6C /* User.swift */; };
+		0985B7421E34AD9D00AE5E6C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7411E34AD9D00AE5E6C /* Comment.swift */; };
+		0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */; };
 		9B4B087C70C1227FC8221367 /* Pods_BHPostsCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		0985B7341E33E8FC00AE5E6C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0985B7361E33F2D000AE5E6C /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		0985B7381E33F36600AE5E6C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0985B73A1E34AB3200AE5E6C /* ReadDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadDataStore.swift; sourceTree = "<group>"; };
+		0985B73D1E34AC5800AE5E6C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0985B73F1E34AC8600AE5E6C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0985B7411E34AD9D00AE5E6C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadDataStoreRESTImplementation.swift; sourceTree = "<group>"; };
 		11A25801854BB4351B8AE276 /* Pods-BHPostsCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHPostsCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E777DD3C7F6EEFA09114C5 /* Pods-BHPostsCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 		0985B7081E32933200AE5E6C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0985B73C1E34AC1600AE5E6C /* Models */,
 				0985B7271E3362F200AE5E6C /* Dependency Injection */,
 				0985B70B1E32936800AE5E6C /* App */,
 				0985B70C1E32936E00AE5E6C /* Data Store */,
@@ -176,6 +187,8 @@
 		0985B70C1E32936E00AE5E6C /* Data Store */ = {
 			isa = PBXGroup;
 			children = (
+				0985B73A1E34AB3200AE5E6C /* ReadDataStore.swift */,
+				0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */,
 			);
 			path = "Data Store";
 			sourceTree = "<group>";
@@ -259,6 +272,16 @@
 				0985B7341E33E8FC00AE5E6C /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0985B73C1E34AC1600AE5E6C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0985B73D1E34AC5800AE5E6C /* Post.swift */,
+				0985B73F1E34AC8600AE5E6C /* User.swift */,
+				0985B7411E34AD9D00AE5E6C /* Comment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6C3AEDB22719F84E7569D32F /* Pods */ = {
@@ -395,20 +418,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0985B7391E33F36600AE5E6C /* UIColorExtension.swift in Sources */,
+				0985B73B1E34AB3200AE5E6C /* ReadDataStore.swift in Sources */,
 				0985B72E1E33953A00AE5E6C /* PostViewModel.swift in Sources */,
 				0985B7221E329C8000AE5E6C /* PostListPresenter.swift in Sources */,
 				0985B7371E33F2D000AE5E6C /* UIFontExtension.swift in Sources */,
 				0985B7181E32986300AE5E6C /* PostListView.swift in Sources */,
 				0985B7291E33642300AE5E6C /* DependencyInjection.swift in Sources */,
 				0985B71C1E329A4400AE5E6C /* PostListInteractorInput.swift in Sources */,
+				0985B7401E34AC8600AE5E6C /* User.swift in Sources */,
 				0985B71A1E3298ED00AE5E6C /* PostListEventHandler.swift in Sources */,
+				0985B7421E34AD9D00AE5E6C /* Comment.swift in Sources */,
 				0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */,
 				0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */,
 				0985B7261E32A0D800AE5E6C /* BHRouterImplementation.swift in Sources */,
 				0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */,
+				0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */,
 				0985B7301E33969100AE5E6C /* UIViewControllerExtension.swift in Sources */,
 				0985B72B1E336B0C00AE5E6C /* ViewControllerFactory.swift in Sources */,
 				0985B7201E329C3700AE5E6C /* PostListViewController.swift in Sources */,
+				0985B73E1E34AC5800AE5E6C /* Post.swift in Sources */,
 				0985B7121E3294A800AE5E6C /* AppDelegate.swift in Sources */,
 				0985B7321E33DC7000AE5E6C /* PostListTVCell.swift in Sources */,
 			);
