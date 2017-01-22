@@ -8,14 +8,8 @@
 
 import UIKit
 
-protocol PostListView: class {
+protocol PostListView: CommonViewMethods {
     var presenter: PostListEventHandler! { get set }
     
-    func showLoading()
-    func stopLoading()
-    
     func refreshPostsView()
-    func showError(withMessage: String)
 }
-
-

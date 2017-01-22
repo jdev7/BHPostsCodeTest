@@ -32,10 +32,6 @@ extension PostListViewController: PostListView {
     func refreshPostsView() {
         tableView.reloadData()
     }
-    
-    func showError(withMessage message: String) {
-        print("error: \(message)")
-    }
 }
 
 extension PostListViewController {

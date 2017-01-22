@@ -7,17 +7,9 @@
 //
 
 import UIKit
-import PKHUD
 
 extension UIViewController {
-    func showLoading() {
-        HUD.show(.progress)
-    }
-    
-    func stopLoading()  {
-        HUD.hide()
-    }
-    
+        
     func setTitle(title: String) {
         
         self.navigationController?.navigationBar.titleTextAttributes = [

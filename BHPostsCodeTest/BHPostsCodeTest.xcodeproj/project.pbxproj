@@ -32,6 +32,13 @@
 		0985B7401E34AC8600AE5E6C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B73F1E34AC8600AE5E6C /* User.swift */; };
 		0985B7421E34AD9D00AE5E6C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7411E34AD9D00AE5E6C /* Comment.swift */; };
 		0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */; };
+		0985B74A1E352F3300AE5E6C /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7491E352F3300AE5E6C /* PostDetailView.swift */; };
+		0985B74C1E352F5900AE5E6C /* PostDetailEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74B1E352F5900AE5E6C /* PostDetailEventHandler.swift */; };
+		0985B74E1E352F6E00AE5E6C /* PostDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */; };
+		0985B7501E352F7700AE5E6C /* PostDetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */; };
+		0985B7521E352F8800AE5E6C /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7511E352F8800AE5E6C /* PostDetailViewController.swift */; };
+		0985B7541E352F9A00AE5E6C /* PostDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7531E352F9A00AE5E6C /* PostDetailPresenter.swift */; };
+		0985B7561E35318100AE5E6C /* CommonViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0985B7551E35318100AE5E6C /* CommonViewMethods.swift */; };
 		9B4B087C70C1227FC8221367 /* Pods_BHPostsCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +70,13 @@
 		0985B73F1E34AC8600AE5E6C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0985B7411E34AD9D00AE5E6C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadDataStoreRESTImplementation.swift; sourceTree = "<group>"; };
+		0985B7491E352F3300AE5E6C /* PostDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		0985B74B1E352F5900AE5E6C /* PostDetailEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailEventHandler.swift; sourceTree = "<group>"; };
+		0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailInteractorInput.swift; sourceTree = "<group>"; };
+		0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailInteractorOutput.swift; sourceTree = "<group>"; };
+		0985B7511E352F8800AE5E6C /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		0985B7531E352F9A00AE5E6C /* PostDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailPresenter.swift; sourceTree = "<group>"; };
+		0985B7551E35318100AE5E6C /* CommonViewMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewMethods.swift; sourceTree = "<group>"; };
 		11A25801854BB4351B8AE276 /* Pods-BHPostsCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHPostsCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E777DD3C7F6EEFA09114C5 /* Pods-BHPostsCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +177,7 @@
 			children = (
 				0985B7331E33E71C00AE5E6C /* Main */,
 				0985B7131E3297A000AE5E6C /* Posts List */,
+				0985B7451E352EFA00AE5E6C /* Post Detail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 			children = (
 				0985B72A1E336B0C00AE5E6C /* ViewControllerFactory.swift */,
 				0985B7311E33DC7000AE5E6C /* PostListTVCell.swift */,
+				0985B7551E35318100AE5E6C /* CommonViewMethods.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +298,43 @@
 				0985B7411E34AD9D00AE5E6C /* Comment.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0985B7451E352EFA00AE5E6C /* Post Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7481E352EFA00AE5E6C /* View */,
+				0985B7471E352EFA00AE5E6C /* Presenter */,
+				0985B7461E352EFA00AE5E6C /* Interactor */,
+			);
+			path = "Post Detail";
+			sourceTree = "<group>";
+		};
+		0985B7461E352EFA00AE5E6C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0985B74D1E352F6E00AE5E6C /* PostDetailInteractorInput.swift */,
+				0985B74F1E352F7700AE5E6C /* PostDetailInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0985B7471E352EFA00AE5E6C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0985B74B1E352F5900AE5E6C /* PostDetailEventHandler.swift */,
+				0985B7531E352F9A00AE5E6C /* PostDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0985B7481E352EFA00AE5E6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0985B7491E352F3300AE5E6C /* PostDetailView.swift */,
+				0985B7511E352F8800AE5E6C /* PostDetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6C3AEDB22719F84E7569D32F /* Pods */ = {
@@ -427,14 +480,21 @@
 				0985B71C1E329A4400AE5E6C /* PostListInteractorInput.swift in Sources */,
 				0985B7401E34AC8600AE5E6C /* User.swift in Sources */,
 				0985B71A1E3298ED00AE5E6C /* PostListEventHandler.swift in Sources */,
+				0985B74A1E352F3300AE5E6C /* PostDetailView.swift in Sources */,
 				0985B7421E34AD9D00AE5E6C /* Comment.swift in Sources */,
+				0985B7501E352F7700AE5E6C /* PostDetailInteractorOutput.swift in Sources */,
+				0985B7521E352F8800AE5E6C /* PostDetailViewController.swift in Sources */,
 				0985B7241E329CD700AE5E6C /* BHRouter.swift in Sources */,
 				0985B71E1E329A5B00AE5E6C /* PostListInteractorOutput.swift in Sources */,
 				0985B7261E32A0D800AE5E6C /* BHRouterImplementation.swift in Sources */,
 				0985B7351E33E8FC00AE5E6C /* MainViewController.swift in Sources */,
+				0985B74C1E352F5900AE5E6C /* PostDetailEventHandler.swift in Sources */,
 				0985B7441E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift in Sources */,
+				0985B74E1E352F6E00AE5E6C /* PostDetailInteractorInput.swift in Sources */,
+				0985B7541E352F9A00AE5E6C /* PostDetailPresenter.swift in Sources */,
 				0985B7301E33969100AE5E6C /* UIViewControllerExtension.swift in Sources */,
 				0985B72B1E336B0C00AE5E6C /* ViewControllerFactory.swift in Sources */,
+				0985B7561E35318100AE5E6C /* CommonViewMethods.swift in Sources */,
 				0985B7201E329C3700AE5E6C /* PostListViewController.swift in Sources */,
 				0985B73E1E34AC5800AE5E6C /* Post.swift in Sources */,
 				0985B7121E3294A800AE5E6C /* AppDelegate.swift in Sources */,
