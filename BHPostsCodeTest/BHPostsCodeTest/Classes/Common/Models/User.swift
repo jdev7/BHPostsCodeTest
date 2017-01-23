@@ -11,7 +11,7 @@ import Gloss
 //MARK: - User
 struct User: Glossy {
     
-    let address : Addres!
+    let address : Address!
     let company : Company!
     let email : String!
     let id : Int!
@@ -87,7 +87,7 @@ struct Company: Glossy {
 }
 
 //MARK: - Addres
-struct Addres: Glossy {
+struct Address: Glossy {
     
     let city : String!
     let geo : Geo!
