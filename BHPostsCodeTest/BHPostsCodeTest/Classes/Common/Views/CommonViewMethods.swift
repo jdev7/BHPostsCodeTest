@@ -26,6 +26,11 @@ extension CommonViewMethods where Self: UIViewController {
     
     func showError(withMessage message: String) {
         stopLoading()
-        print("error: \(message)")
+        
+        let alert = UIAlertController(title: "error".localizedCapitalized, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
