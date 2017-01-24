@@ -22,4 +22,9 @@ public class CDGeo: NSManagedObject {
         }
         return dictionary
     }
+    
+    func bind(withGeo geo: Geo) {
+        lat = geo.lat
+        lng = geo.lng
+    }
 }

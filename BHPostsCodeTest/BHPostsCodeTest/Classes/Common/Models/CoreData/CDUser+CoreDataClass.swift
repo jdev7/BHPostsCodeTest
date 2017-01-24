@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SugarRecord
 
 
 public class CDUser: NSManagedObject {
@@ -23,7 +24,7 @@ public class CDUser: NSManagedObject {
         if email != nil{
             dictionary["email"] = email
         }
-        dictionary["id"] = id
+        dictionary["id"] = Int(id)
         if name != nil{
             dictionary["name"] = name
         }
@@ -37,6 +38,23 @@ public class CDUser: NSManagedObject {
             dictionary["website"] = website
         }
         return dictionary
+    }
+    
+    func bind(withUser user: User, context: Context) {
+        email = user.email
+        id = Int16(user.id)
+        name = user.name
+        phone = user.phone
+        username = user.username
+        website = user.website
+        
+        let cdAddress: CDAddress = try! context.new()
+        cdAddress.bind(withAddress: user.address, context: context)
+        address = cdAddress
+        
+        let cdCompany: CDCompany = try! context.new()
+        cdCompany.bind(withCompany: user.company)
+        company = cdCompany
     }
     
 }

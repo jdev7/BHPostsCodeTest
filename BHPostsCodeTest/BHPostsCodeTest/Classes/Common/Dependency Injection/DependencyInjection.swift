@@ -77,6 +77,7 @@ class InteractorInjector {
     var postListInteractor: PostListInteractorInput {
         let interactor = PostListInteractor()
         interactor.networkDataStore = dataStoreInjector.networkDatastore
+        interactor.diskDataStore = dataStoreInjector.diskDataStore
         return interactor
     }
 }
@@ -84,6 +85,7 @@ class InteractorInjector {
 //Services
 class DataStoreInjector {
     var networkDatastore: ReadDataStore = ReadDataStoreRESTImplementation()
+    var diskDataStore: WriteDataStore & ReadDataStore = DataStoreDiskImplementation(dataStoreName: "BHDataModel")
 }
 
 

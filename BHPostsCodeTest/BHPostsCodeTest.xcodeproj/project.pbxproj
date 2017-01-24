@@ -51,6 +51,7 @@
 		09A961861E36C1FF007128B8 /* CDAddress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9617A1E36C1FF007128B8 /* CDAddress+CoreDataProperties.swift */; };
 		09A961871E36C1FF007128B8 /* CDComment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9617B1E36C1FF007128B8 /* CDComment+CoreDataClass.swift */; };
 		09A961881E36C1FF007128B8 /* CDComment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9617C1E36C1FF007128B8 /* CDComment+CoreDataProperties.swift */; };
+		09A9618A1E36C460007128B8 /* DataStoreDiskImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A961891E36C460007128B8 /* DataStoreDiskImplementation.swift */; };
 		9B4B087C70C1227FC8221367 /* Pods_BHPostsCodeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		09A9617A1E36C1FF007128B8 /* CDAddress+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDAddress+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		09A9617B1E36C1FF007128B8 /* CDComment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		09A9617C1E36C1FF007128B8 /* CDComment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDComment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		09A961891E36C460007128B8 /* DataStoreDiskImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreDiskImplementation.swift; sourceTree = "<group>"; };
 		11A25801854BB4351B8AE276 /* Pods-BHPostsCodeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.debug.xcconfig"; sourceTree = "<group>"; };
 		4646BB2B321E39369B077018 /* Pods_BHPostsCodeTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BHPostsCodeTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E777DD3C7F6EEFA09114C5 /* Pods-BHPostsCodeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BHPostsCodeTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-BHPostsCodeTest/Pods-BHPostsCodeTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				0985B73A1E34AB3200AE5E6C /* ReadDataStore.swift */,
 				0985B7571E36AB2400AE5E6C /* WriteDataStore.swift */,
 				0985B7431E34AFA100AE5E6C /* ReadDataStoreRESTImplementation.swift */,
+				09A961891E36C460007128B8 /* DataStoreDiskImplementation.swift */,
 			);
 			path = "Data Store";
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A9618A1E36C460007128B8 /* DataStoreDiskImplementation.swift in Sources */,
 				0985B7391E33F36600AE5E6C /* UIColorExtension.swift in Sources */,
 				0985B73B1E34AB3200AE5E6C /* ReadDataStore.swift in Sources */,
 				0985B72E1E33953A00AE5E6C /* PostViewModel.swift in Sources */,
@@ -667,7 +671,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11A25801854BB4351B8AE276 /* Pods-BHPostsCodeTest.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 46H26683TG;
@@ -683,7 +686,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1E777DD3C7F6EEFA09114C5 /* Pods-BHPostsCodeTest.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 46H26683TG;
