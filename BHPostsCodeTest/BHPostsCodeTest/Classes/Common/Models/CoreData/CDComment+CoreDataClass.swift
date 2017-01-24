@@ -20,11 +20,19 @@ public class CDComment: NSManagedObject {
         if email != nil{
             dictionary["email"] = email
         }
-        dictionary["id"] = id
+        dictionary["id"] = Int(id)
         if name != nil{
             dictionary["name"] = name
         }
-        dictionary["postId"] = postId
+        dictionary["postId"] = Int(postId)
         return dictionary
+    }
+    
+    func bind(withComment comment: Comment) {
+        body = comment.body
+        email = comment.email
+        id = Int16(comment.id)
+        name = comment.name
+        postId = Int16(comment.postId)
     }
 }

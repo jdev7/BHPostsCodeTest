@@ -25,4 +25,10 @@ public class CDCompany: NSManagedObject {
         }
         return dictionary
     }
+    
+    func bind(withCompany company: Company) {
+        bs = company.bs
+        catchPhrase = company.catchPhrase
+        name = company.name
+    }
 }

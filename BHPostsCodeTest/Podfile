@@ -7,5 +7,6 @@ target 'BHPostsCodeTest' do
     pod 'PKHUD', '~> 4.0'
     pod 'Gloss', '~> 1.2'
     pod 'Alamofire', '~> 4.3'
+    pod 'SugarRecord/CoreData', '3.0'
     
 end

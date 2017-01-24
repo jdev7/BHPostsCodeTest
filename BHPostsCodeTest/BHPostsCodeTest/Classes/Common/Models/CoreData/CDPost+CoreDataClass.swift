@@ -17,11 +17,18 @@ public class CDPost: NSManagedObject {
         if body != nil{
             dictionary["body"] = body
         }
-        dictionary["id"] = id
+        dictionary["id"] = Int(id)
         if title != nil{
             dictionary["title"] = title
         }
-        dictionary["userId"] = userId
+        dictionary["userId"] = Int(userId)
         return dictionary
+    }
+    
+    func bind(withPost post: Post) {
+        body = post.body
+        id = Int16(post.id)
+        userId = Int16(post.userId)
+        title = post.title
     }
 }

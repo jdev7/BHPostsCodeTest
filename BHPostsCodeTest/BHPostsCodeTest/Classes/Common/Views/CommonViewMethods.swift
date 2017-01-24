@@ -25,6 +25,7 @@ extension CommonViewMethods where Self: UIViewController {
     }
     
     func showError(withMessage message: String) {
+        stopLoading()
         print("error: \(message)")
     }
 }

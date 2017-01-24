@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import SugarRecord
 
 public class CDAddress: NSManagedObject {
     
@@ -31,5 +31,16 @@ public class CDAddress: NSManagedObject {
             dictionary["zipcode"] = zipcode
         }
         return dictionary
+    }
+    
+    func bind(withAddress address: Address, context: Context) {
+        city = address.city
+        street = address.street
+        suite = address.suite
+        zipcode = address.zipcode
+        
+        let cdGeo: CDGeo = try! context.new()
+        cdGeo.bind(withGeo: address.geo)
+        geo = cdGeo
     }
 }

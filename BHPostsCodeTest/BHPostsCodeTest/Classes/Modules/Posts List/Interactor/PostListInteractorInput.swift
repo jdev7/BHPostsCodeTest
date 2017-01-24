@@ -17,6 +17,7 @@ protocol PostListInteractorInput {
 class PostListInteractor: PostListInteractorInput {
     weak var output: PostListInteractorOutput?
     var networkDataStore: ReadDataStore!
+    var diskDataStore: ReadDataStore & WriteDataStore!
     
     private var posts: [Post]!
     private var users: [User]!
@@ -32,14 +33,24 @@ class PostListInteractor: PostListInteractorInput {
     }
     
     private func loadPostsFromDisk() {
-        // TODO: load posts from disk and if no results, loadFromNetwork
-        loadPostsFromNetwork()
+        // load posts from disk and if no results or error, loadFromNetwork
+        diskDataStore.getPosts(success: { (posts) in
+            if posts.count > 0 {
+                self.posts = posts
+                self.loadUsers()
+            }
+            else {
+                self.loadPostsFromNetwork()
+            }
+        }) { (error) in
+            self.loadPostsFromNetwork()
+        }
     }
     
     private func loadPostsFromNetwork() {
         networkDataStore.getPosts(success: { (posts) in
             self.posts = posts
-            // TODO: save Posts from network to Disk
+            self.diskDataStore.savePostsInBackground(posts: posts)
             self.loadUsers()
             
         }) { (error) in
@@ -57,14 +68,24 @@ class PostListInteractor: PostListInteractorInput {
     }
     
     private func loadUsersFromDisk() {
-        // TODO: load users from disk and if no results, loadFromNetwork
-        loadUsersFromNetwork()
+        // load users from disk and if no results or error, loadFromNetwork
+        diskDataStore.getUsers(success: { (users) in
+            if users.count > 0 {
+                self.users = users
+                self.loadComments()
+            }
+            else {
+                self.loadUsersFromNetwork()
+            }
+        }) { (error) in
+            self.loadUsersFromNetwork()
+        }
     }
     
     private func loadUsersFromNetwork() {
         networkDataStore.getUsers(success: { (users) in
             self.users = users
-            // TODO: save Users from network to Disk
+            self.diskDataStore.saveUsersInBackground(users: users)
             self.loadComments()
             
         }) { (error) in
@@ -82,14 +103,24 @@ class PostListInteractor: PostListInteractorInput {
     }
     
     private func loadCommentsFromDisk() {
-        // TODO: load comments from disk and if no results, loadFromNetwork
-        loadCommentsFromNetwork()
+        // load comments from disk and if no results or error, loadFromNetwork
+        diskDataStore.getComments(success: { (comments) in
+            if comments.count > 0 {
+                self.comments = comments
+                self.preparePosts()
+            }
+            else {
+                self.loadCommentsFromNetwork()
+            }
+        }) { (error) in
+            self.loadCommentsFromNetwork()
+        }
     }
     
     private func loadCommentsFromNetwork() {
         networkDataStore.getComments(success: { (comments) in
             self.comments = comments
-            // TODO: save comments from network to Disk
+            self.diskDataStore.saveCommentsInBackground(comments: comments)
             self.preparePosts()
             
         }) { (error) in
