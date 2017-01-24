@@ -11,14 +11,15 @@ import SugarRecord
 
 class DataStoreDiskImplementation: ReadDataStore, WriteDataStore {
     
-    lazy var coreDataStorage: CoreDataDefaultStorage = {
-        let store = CoreDataStore.named("BHDataModel")
+    let coreDataStorage: CoreDataDefaultStorage
+    
+    init(dataStoreName name: String) {
+        let store = CoreDataStore.named(name)
         let bundle = Bundle(for: type(of: self))
         let model = CoreDataObjectModel.merged([bundle])
-        let defaultStorage = try! CoreDataDefaultStorage(store: store, model: model)
+        coreDataStorage = try! CoreDataDefaultStorage(store: store, model: model)
         
-        return defaultStorage
-    }()
+    }
     
     func getPosts(success: @escaping ([Post]) -> (), error: @escaping (NSError) -> ()) {
         DispatchQueue.global(qos: .background).async {

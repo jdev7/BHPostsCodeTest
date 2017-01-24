@@ -85,7 +85,7 @@ class InteractorInjector {
 //Services
 class DataStoreInjector {
     var networkDatastore: ReadDataStore = ReadDataStoreRESTImplementation()
-    var diskDataStore: WriteDataStore & ReadDataStore = DataStoreDiskImplementation()
+    var diskDataStore: WriteDataStore & ReadDataStore = DataStoreDiskImplementation(dataStoreName: "BHDataModel")
 }
 
 
